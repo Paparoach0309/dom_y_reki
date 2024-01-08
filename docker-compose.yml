@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  secure-t-test:
+    image: srv-artprod-001.main.velcom.by:9001/secure-t:test
+    #image: srv-artprod-001.main.velcom.by:9001/secure-t:dev
+    #image: srv-artprod-001.main.velcom.by:9001/secure-t:prod
+    ports:
+      - "11116:3000"
+    environment:
+      - TZ=Europe/Minsk
+    deploy:
+      mode: replicated
+      replicas: 1
+    networks:
+      - app
+networks:
+
+  app:
+    external: true

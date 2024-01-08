@@ -1,0 +1,44 @@
+{
+  "name": "dom_y_reki",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "dockerbuild": "next build",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.4",
+    "@mui/styled-engine-sc": "^5.12.0",
+    "@reduxjs/toolkit": "^1.9.3",
+    "autoprefixer": "10.4.15",
+    "chart.js": "^4.4.0",
+    "formik": "^2.4.3",
+    "framer-motion": "^10.16.4",
+    "next": "13.4.13",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-icomoon": "^2.5.7",
+    "react-intersection-observer": "^9.5.2",
+    "react-redux": "^8.0.5",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.11",
+    "tailwindcss": "3.3.3",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.5.0",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "@types/react-slick": "^0.23.10",
+    "typescript": "5.1.6"
+  }
+}

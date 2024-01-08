@@ -1,0 +1,46 @@
+include:
+  - project: 'Online_and_Web-Services_Group/JAVA_PROJ/common_ci-cd'
+    file:
+      - '/templates_react/base_deploy_staging.yml'
+      - '/templates_react/base_deploy_prod.yml'
+      - '/templates_approve/base_approve.yml'
+
+stages:
+  - staging
+  - approve
+  - production
+
+variables:
+  POM_FILE: pom.xml
+  DOCKER: srv-artprod-001.main.velcom.by:9001
+
+Release:test:
+  tags:
+   - dockerd
+  extends: .base_deploy_staging
+  stage: staging
+  environment:
+    name: test
+
+Approve_1:prod:
+  extends: .base_approve
+  stage: approve
+  only:
+    - tags
+
+Approve_2:prod:
+  extends: .base_approve
+  stage: approve
+  only:
+    - tags
+
+Release:prod:
+  tags:
+   - dockerd
+  extends: .base_deploy_prod
+  stage: production
+  environment:
+    name: prod
+  only:
+    - tags
+  when: on_success
